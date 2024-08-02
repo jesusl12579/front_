@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Académico</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+
+
+    <div class="header">
+        <div class="menu-toggle">☰ Personal Académico</div>
+        <div class="notification">
+            <img src="../../../assets/campana'.png" alt="Notificaciones">
+            <div class="notification-count">0</div>
+        </div>
+    </div>
+
+    
+
+    <div class="sidebar">
+        <div class="dropdown">
+            <a href="#">ㅤGeneral</a>
+            <div class="dropdown-content">
+                <a routerLink="/control">Control de usuarios</a>
+                <a routerLink="/admin">Gestión de incidencias</a>
+                <a href="/comen">Gestión de comentarios</a>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <a href="#">ㅤAdministrador</a>
+            <div class="dropdown-content">
+                <a routerLink="/control">Control de usuarios</a>
+                <a routerLink="/admin">Gestión de incidencias</a>
+                <a href="/comen">Gestión de comentarios</a>
+            </div>
+        </div>
+      
+        <div class="dropdown">
+            <a href="#">ㅤDocente</a>
+            <div class="dropdown-content">
+                <a routerLink="/doce">Actualizar Perfil</a>
+                <a routerLink="/control">Control de usuarios</a>
+                <a routerLink="/admin">Gestión de incidencias</a>
+                <a href="/comen">Gestión de comentarios</a>
+            </div>
+        </div>
+       
+        <div class="dropdown">
+            <a href="#">ㅤAlumno</a>
+            <div class="dropdown-content">
+                <a routerLink="/control">Control de usuarios</a>
+                <a routerLink="/admin">Gestión de incidencias</a>
+                <a href="/comen">Gestión de comentarios</a>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+    <div class="main-content">
+        <div class="container">
+           <!---- <h2>Actualizar Perfil</h2> ---->
+            <form action="/actualizar-perfil" method="POST">
+                <h3>Estudios:</h3>
+                
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="apellidoPaterno">Apellido Paterno:</label>
+                <input type="text" id="apellidoPaterno" name="apellidoPaterno" required>
+                
+                <label for="apellidoMaterno">Apellido Materno:</label>
+                <input type="text" id="apellidoMaterno" name="apellidoMaterno" required>
+
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nivel</th>
+                            <th>Carrera</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <select name="nivel" id="nivel" required>
+
+                                    <option value="Preparatoria">Ingenieria</option>
+                                    <option value="Licenciatura">Licenciatura</option>
+                                    <option value="Maestría">Maestría</option>
+                                    <option value="Doctorado">Doctorado</option>
+                                </select>
+                            </td>
+                            <td><input type="text" name="carrera" required></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <label for="experiencia">Experiencia Laboral:</label>
+                <textarea id="experiencia" name="experiencia" required></textarea>
+
+                <label for="logros">Logros obtenidos:</label>
+                <textarea id="logros" name="logros" required></textarea>
+            
+                <label for="foto">Subir Foto (opcional):</label>
+                <input type="file" id="foto" name="foto" accept="image/*">
+
+                <input type="submit" value="Actualizar Perfil">
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<router-outlet />
+

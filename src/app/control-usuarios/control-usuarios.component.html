@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevos Usuarios</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <div class="header">
+        <div class="menu-toggle">☰ Personal Académico</div>
+        <div class="notification">
+            <img src="../../../assets/campana'.png" alt="Notificaciones">
+            <div class="notification-count">0</div>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <div class="dropdown">
+            <a href="#">ㅤGeneral</a>
+            <div class="dropdown-content">
+                <a routerLink="/control">Control de usuarios</a>
+                <a routerLink="/admin">Gestión de incidencias</a>
+                <a href="/comen">Gestión de comentarios</a>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <a href="#">ㅤAdministrador</a>
+            <div class="dropdown-content">
+                <a routerLink="/control">Control de usuarios</a>
+                <a routerLink="/admin">Gestión de incidencias</a>
+                <a href="/comen">Gestión de comentarios</a>
+            </div>
+        </div>
+      
+        <div class="dropdown">
+            <a href="#">ㅤDocente</a>
+            <div class="dropdown-content">
+                <a routerLink="/doce">Actualizar Perfil</a>
+                <a routerLink="/control">Control de usuarios</a>
+                <a routerLink="/admin">Gestión de incidencias</a>
+                <a href="/comen">Gestión de comentarios</a>
+            </div>
+        </div>
+       
+        <div class="dropdown">
+            <a href="#">ㅤAlumno</a>
+            <div class="dropdown-content">
+                <a routerLink="/control">Control de usuarios</a>
+                <a routerLink="/admin">Gestión de incidencias</a>
+                <a href="/comen">Gestión de comentarios</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="header-usuarios">
+            <h1>Nuevos usuarios</h1>
+        </div>
+        <div class="container">
+            <table class="user-list" id="userList">
+                <thead>
+                    <tr>
+                        <th>Foto</th>
+                        <th>Numero de control</th>
+                        <th>ID</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Content will be injected here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const newUsers = [
+            { nombre: 'Brenda Hernandez', matricula: 'GIRO631', id: '1223100474' },
+            { nombre: 'Juan Perez', matricula: 'GIRO632', id: '1223100475' },
+            { nombre: 'Maria Lopez', matricula: 'GIRO633', id: '1223100476' }
+        ];
+
+        function addUser(user) {
+            const userList = document.getElementById('userList').querySelector('tbody');
+            const userRow = document.createElement('tr');
+
+            userRow.innerHTML = `
+                <td><img src="../../assets/Usu.jpg" alt="Usuario"></td>
+                <td>Estudiante</td>
+                <td>${user.nombre} ${user.matricula}</td>
+                <td>${user.id}</td>
+                <td>
+                    <button class="accept-btn">Aceptar</button>
+                    <button class="reject-btn">Rechazar</button>
+                </td>
+            `;
+
+            userList.appendChild(userRow);
+        }
+
+        function onLogin(newUser) {
+            addUser(newUser);
+
+            const notificationCount = document.querySelector('.notification-count');
+            const currentCount = parseInt(notificationCount.textContent);
+            notificationCount.textContent = currentCount + 1;
+        }
+
+        newUsers.forEach(user => onLogin(user));
+    </script>
+</body>
+</html>
+
+
+<router-outlet />
+

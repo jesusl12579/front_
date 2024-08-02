@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfaz con Carrusel y Formulario de Inicio de Sesión</title>
+
+</head>
+<body>
+    <img src="https://i.imgur.com/TcCQsYQ.png" alt="Docentes UTNG" class="logo">
+    <div class="container">
+        <div class="carousel">
+            <img src="../../assets/img/imagen1.jpg" alt="Imagen 1">
+            <img src="../../assets/img/imagen2.jpg" alt="Imagen 2">
+            <img src="../../assets/img/imagen3.jpg" alt="Imagen 3">
+        </div>
+        <div class="login-container">
+            <h2>Iniciar Sesión</h2>
+            <form action="/login" method="post">
+                <input type="text" name="username" placeholder="Nombre de usuario" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <button type="submit" class="btn btn-success">Iniciar</button>
+            </form>
+            <a routerLink="/registro">Olvide mi contraseña</a>
+        </div>
+    </div>
+</body>
+</html>

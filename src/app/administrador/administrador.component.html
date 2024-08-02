@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Reporte de Incidencias y Errores</title>
+  
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+            document.getElementById('confirmation').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+   
+
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="#">Inicio</a>
+        <a href="#">Reporte de Incidencias</a>
+        <a href="#">Historial de Reportes</a>
+        <a href="#">Configuración</a>
+    </div>
+
+    <div id="main">
+        <div class="container">
+            <h1>Reporte de Incidencias y Errores</h1>
+            <form onsubmit="submitForm(event)">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="issue">Descripción del Problema:</label>
+                <textarea id="issue" name="issue" rows="5" required></textarea>
+
+                <label for="impact">Impacto del Problema:</label>
+                <textarea id="impact" name="impact" rows="3" required></textarea>
+
+                <label for="screenshot">Adjuntar Captura de Pantalla / Archivo de Registro:</label>
+                <input type="file" id="screenshot" name="screenshot" accept=".png, .jpg, .jpeg, .log, .txt">
+
+                <button type="submit">Enviar Reporte</button>
+            </form>
+            <div id="confirmation" class="confirmation">
+                ¡Gracias por tu reporte! Nuestro equipo de soporte técnico te contactará pronto para dar seguimiento a la incidencia.
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Académico</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+
+
+    <div class="header">
+        <div class="menu-toggle">☰ Personal Académico</div>
+        <div class="notification">
+            <img src="../../../assets/campana'.png" alt="Notificaciones">
+            <div class="notification-count">0</div>
+        </div>
+    </div>
+
+    
+
+    <div class="sidebar">
+        <div class="dropdown">
+            <a href="#">ㅤGeneral</a>
+            <div class="dropdown-content">
+                <a routerLink="/control">Control de usuarios</a>
+                <a routerLink="/admin">Gestión de incidencias</a>
+                <a href="/comen">Gestión de comentarios</a>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <a href="#">ㅤAdministrador</a>
+            <div class="dropdown-content">
+                <a routerLink="/control">Control de usuarios</a>
+                <a routerLink="/admin">Gestión de incidencias</a>
+                <a href="/comen">Gestión de comentarios</a>
+            </div>
+        </div>
+      
+        <div class="dropdown">
+            <a href="#">ㅤDocente</a>
+            <div class="dropdown-content">
+                <a routerLink="/doce">Actualizar Perfil</a>
+                <a routerLink="/control">Control de usuarios</a>
+                <a routerLink="/admin">Gestión de incidencias</a>
+                <a href="/comen">Gestión de comentarios</a>
+            </div>
+        </div>
+       
+        <div class="dropdown">
+            <a href="#">ㅤAlumno</a>
+            <div class="dropdown-content">
+                <a routerLink="/control">Control de usuarios</a>
+                <a routerLink="/admin">Gestión de incidencias</a>
+                <a href="/comen">Gestión de comentarios</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<router-outlet />
